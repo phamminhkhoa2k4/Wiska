@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js" xmlns="http://www.w3.org/1999/xhtml"  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Favicon-->
+        <!--<link rel="shortcut icon" href="assets/img/fav.png"/>-->
+        <!-- Author Meta -->
+        <meta name="author" content="CodePixar"/>
+        <!-- Meta Description -->
+        <meta name="description" content=""/>
+        <!-- Meta Keyword -->
+        <meta name="keywords" content=""/>
+        <!-- meta character set -->
+        <meta charset="UTF-8"/>
+        <!-- Site Title -->
+        <title>Wiska Store | Cart </title>
+
+        <!--
+                CSS
+                ============================================= -->
+        <link rel="stylesheet" href="assets/css/linearicons.css"/>
+        <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/themify-icons.css"/>
+        <link rel="stylesheet" href="assets/css/nice-select.css"/>
+        <link rel="stylesheet" href="assets/css/nouislider.min.css"/>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
+    </h:head>
+
+    <body>
+
+        <!-- Start Header Area -->
+        <ui:include src="Layout/header.xhtml">
+
+        </ui:include>
+        <!-- End Header Area -->
+
+        <!-- Start Banner Area -->
+        <section class="banner-area organic-breadcrumb">
+            <div class="container">
+                <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                    <div class="col-first">
+                        <h1>Shopping Cart</h1>
+                        <nav class="d-flex align-items-center">
+                            <h:link outcome="index">Home<span class="lnr lnr-arrow-right"></span></h:link>
+                            <a href="#">Cart</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Banner Area -->
+
+        <!--================Cart Area =================-->
+        <section class="cart_area">
+            <div class="container">
+                <div class="cart_inner">
+                    <div class="table-responsive">
+                        <c:if test="#{cartMB.cartItems.size() != 0}" >
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">    </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ui:repeat value="#{cartMB.cartItems}" var="cart">
+                                        <tr>
+                                            <td>
+                                                <div class="media">
+                                                    <div class="d-flex">
+                                                        <img src="./resources/products/#{cart.thumbnail}" alt="#{cart.thumbnail}" style="width: 150px;height: 130px;border-radius: 15px;overflow: hidden;"/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p>#{cart.title}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h5>$#{cart.price}</h5>
+                                            </td>
+                                            <h:form>
+                                                <td>
+                                                    <div class="product_counts">
+                                                        <h:inputText id="sst#{cart.productId}" value="#{cart.quantity}" maxlength="12" title="Quantity:" styleClass="input-text qty inputs"/>
+                                                        <h:commandLink styleClass="increase items-count buttons" type="button" action="#{cartMB.incrementQuantity(cart.productId)}">
+                                                            <f:ajax render="sst#{cart.productId}" execute="@this"/>
+                                                            <i class="lnr lnr-chevron-up"></i>
+                                                        </h:commandLink>
+                                                        <h:commandLink styleClass="reduced items-count buttons" type="button" action="#{cartMB.decrementQuantity(cart.productId)}">
+                                                            <f:ajax render="sst#{cart.productId}" execute="@this"/>
+                                                            <i class="lnr lnr-chevron-down"></i>
+                                                        </h:commandLink>
+                                                    </div>
+                                                </td>
+                                            </h:form>
+                                            <td>
+                                                <h5>$#{cart.price * cart.quantity}</h5>
+                                            </td>
+                                            <td>
+                                                <h:form>
+                                                    <h:commandButton action="#{cartMB.removeItem(cart.productId)}" styleClass="btn btn-danger" value="X"/>
+                                                </h:form>
+                                            </td>
+                                        </tr>
+                                    </ui:repeat>
+                                    <tr>
+                                        <td>
+                                            <h:form>
+                                                <h:commandButton action="#{cartMB.clearCart()}" styleClass="btn btn-danger" value="Clear" />
+                                            </h:form>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <h5>Total</h5>
+                                        </td>
+                                        <td>
+                                            <h5>$#{cartMB.TotalCart()}</h5>
+                                        </td>
+                                        <td>
+
+                                        </td>
+
+                                    </tr>
+                                    <tr class="out_button_area">
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <div class="checkout_btn_inner d-flex align-items-center">
+                                                <h:link outcome="shop" value="Continue Shopping" styleClass="gray_btn"/>
+                                                <h:link outcome="checkout" value="Proceed to checkout" styleClass="primary-btn"/>
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </c:if>
+                        <c:if test="#{cartMB.cartItems.size() == 0}">
+                            <h1 style="text-align: center">Cart Is Empty => <h:link outcome="shop" styleClass="btn btn-primary">Go To Shop</h:link></h1>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Cart Area =================-->
+
+        <!-- start footer Area -->
+        <ui:include src="Layout/footer.xhtml"/>
+        <!-- End footer Area -->
+
+        <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.assets/js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.sticky.js"></script>
+        <script src="assets/js/nouislider.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body>
+        <div
+        class="sidebar"
+        data-background-color="white"
+        data-active-color="danger"
+      >
+        <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+        <div class="sidebar-wrapper">
+          <div class="logo">
+            <h:link outcome="dashboard" class="simple-text"> Wiska </h:link>
+          </div>
+
+          <ul class="nav">
+            <li class="active">
+              <h:link outcome="dashboard">
+                <i class="ti-panel"></i>
+                <p>Dashboard</p>
+              </h:link>
+            </li>
+            <li>
+              <h:link outcome="product-list">
+                <i class="ti-view-list-alt"></i>
+                <p>Product List</p>
+              </h:link>
+            </li>
+              <li>
+              <h:link outcome="brand-list">
+                <i class="ti-heart"></i>
+                <p>Brand List</p>
+              </h:link>
+            </li>
+              <li>
+              <h:link outcome="category-list">
+                <i class="ti-layout"></i>
+                <p>Category List</p>
+              </h:link>
+            </li>
+              <li>
+              <h:link outcome="blog-list">
+                <i class="ti-pencil-alt2"></i>
+                <p>Blog List</p>
+              </h:link>
+            </li>
+            <li>
+              <h:link outcome="order-list">
+                <i class="ti-bell "></i>
+                <p>Order List</p>
+              </h:link>
+            </li>
+            <li>
+              <h:link outcome="user-list">
+                <i class="ti-user"></i>
+
+                <p>Admin List</p>
+              </h:link>
+            </li>
+            <li>
+              <h:link outcome="contact-list">
+                <i class="ti-email"></i>
+                <p>Contact List</p>
+              </h:link>
+            </li>
+            <li class="active-pro">
+              <a href="/ShoesStore-war/faces/shop.xhtml">
+                <i class="ti-export"></i>
+                <p>Exit</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </body>
+</html>
+
+
+

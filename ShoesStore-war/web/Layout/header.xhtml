@@ -1,0 +1,159 @@
+    
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <header class="header_area sticky-header">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light main_box">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <h:link styleClass="navbar-brand logo_h" outcome="index"
+                                ><h3 class="mb-0 logo_heading">Wiska Store</h3></h:link>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                            >
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div
+                            class="collapse navbar-collapse offset"
+                            id="navbarSupportedContent"
+                            >
+                            <ul class="nav navbar-nav menu_nav ml-auto" style="align-items: center;">
+                                <li class="nav-item #{param.active == 'home' ? 'active' : ''}">
+                                    <h:link outcome="index" value="Home" styleClass="nav-link"/>
+
+                                </li>
+
+
+                                <li class="nav-item #{param.active == 'shop' ? 'active' : ''}">
+                                    <h:link outcome="shop" value="Shop" styleClass="nav-link"/>
+
+                                </li>
+                                <li class="nav-item">
+                                    <h:link outcome="blog" value="Blog" styleClass="nav-link"/>
+
+                                </li>
+                                <li class="nav-item #{param.active == 'contact' ? 'active' : ''}">
+                                    <h:link outcome="contact" value="Contact" styleClass="nav-link"/>
+                                </li>
+                                <c:if test="#{usersMB.loggedIn}">
+                                    <li class="nav-item  submenu dropdown #{param.active == 'login' ? 'active' : ''}">
+                                        <a
+                                            href="#"
+                                            class="nav-link dropdown-toggle"
+                                            data-toggle="dropdown"
+                                            role="button"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                            >
+                                            <div style="height: 40px;width: 40px;border-radius: 50%;overflow:hidden;">
+                                                <img src="../resources/users/#{usersMB.avtuser}" alt="alt" style="height: 100%;width: 100%;"/>
+                                            </div>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">#{usersMB.loggedInUser}</a>
+                                            </li>
+                                            <c:if test="#{usersMB.role == 'admin'}" >
+                                                <li class="nav-item">
+                                                    <h:link outcome="/Admin/dashboard" value="Dashboard" styleClass="nav-link" />
+                                                </li>
+                                            </c:if>
+                                            <h:form>
+                                                <li class="nav-item">
+                                                    <h:commandButton action="#{usersMB.Logout}" value="Logout"  styleClass="nav-link ka" style="border: none; width: 100%;text-align: left; background: #ffffff"/>
+                                                </li>
+                                            </h:form>
+                                        </ul>
+
+                                    </li>
+                                </c:if>
+                                <c:if test="#{!usersMB.loggedIn}">
+                                    <li class="nav-item #{param.active == 'login' ? 'active' : ''}">
+                                        <h:link outcome="login" value="Login" styleClass="nav-link"/>
+                                    </li>
+                                </c:if>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="nav-item">
+                                    <h:link outcome="cart" styleClass="cart"><span class="ti-bag"></span></h:link>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="search">
+                                        <span class="lnr lnr-magnifier" id="search"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="search_input" id="search_input_box">
+                <div class="container">
+                    <h:form styleClass="d-flex justify-content-between">
+                        <h:inputText value="#{searchMB.searchTitle}"
+                                     styleClass="form-control"
+                                     id="search_input"
+                                     a:placeholder="Search Here">
+                            <f:ajax event="keyup" render="searchResults" listener="#{searchMB.search}" />
+                        </h:inputText>
+                        <button type="submit" class="btn"></button>
+                        <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+                    </h:form>
+
+                    <h:panelGroup id="searchResults">
+                        <h:dataTable value="#{searchMB.searchResults}" var="result" styleClass="table table-sm">
+                            <h:column>
+
+                                <div class="align-middle text-left">
+
+
+                                    <img src="./resources/products/#{result.thumnail}" height="90px" width="90px" alt="" style="border-radius: 10px;"/>
+
+                                </div>
+
+                            </h:column>
+                            <h:column>
+                                <div class="align-middle text-uppercase font-weight-bold text-white text-left" style="margin-top: 2.5rem">
+                                    #{result.title}
+                                </div>
+                            </h:column>
+                            <h:column>
+                                <div class="align-middle text-uppercase font-weight-bold text-white text-left" style="margin-top: 2.5rem">
+                                    #{result.brandId.brandName}
+                                </div>
+                            </h:column>
+                            <h:column>
+                                <div class="align-middle text-uppercase font-weight-bold text-white text-left" style="margin-top: 2.5rem">
+                                    #{result.price}
+                                </div>
+                            </h:column>
+
+                            <!-- Add more columns as needed -->
+                        </h:dataTable>
+                    </h:panelGroup>
+
+                </div>
+
+
+            </div>
+        </header>
+    </h:body>
+</html>
+
+

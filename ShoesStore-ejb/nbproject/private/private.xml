@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/BrandsFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Categories.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/UsersFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Contacts.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/BlogsFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Users.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/ProductsFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/CategoriesFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Orders.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/ContactsFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Cart.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/OrdersFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/OrderDetailFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Blogs.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/OrderDetail.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/OrderDetailFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/BlogsFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/CartSBLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/ProductsFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/CategoriesFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/BrandsFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/ContactsFacadeLocal.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/OrdersFacade.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/CartSB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Products.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/entity/Brands.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-ejb/src/java/com/shoes/sb/UsersFacade.java</file>
+        </group>
+    </open-files>
+</project-private>

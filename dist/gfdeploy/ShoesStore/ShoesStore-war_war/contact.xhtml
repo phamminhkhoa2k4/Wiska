@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="zxx" class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:a="http://xmlns.jcp.org/jsf/passthrough"  xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Favicon-->
+        <!--<link rel="shortcut icon" href="assets/assets/img/fav.png"/>-->
+        <!-- Author Meta -->
+        <meta name="author" content="CodePixar"/>
+        <!-- Meta Description -->
+        <meta name="description" content=""/>
+        <!-- Meta Keyword -->
+        <meta name="keywords" content=""/>
+        <!-- Site Title -->
+        <title>Wiska Store | Contact</title>
+
+        <!--
+                CSS
+                ============================================= -->
+        <link rel="stylesheet" href="assets/css/linearicons.css"/>
+        <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+        <link rel="stylesheet" href="assets/css/themify-icons.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/nice-select.css"/>
+        <link rel="stylesheet" href="assets/css/nouislider.min.css"/>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
+    </h:head>
+
+
+    <body>
+
+        <!-- Start Header Area -->
+        <ui:include src="Layout/header.xhtml" />
+        <!-- End Header Area -->
+
+        <!-- Start Banner Area -->
+        <section class="banner-area organic-breadcrumb">
+            <div class="container">
+                <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                    <div class="col-first">
+                        <h1>Contact Us</h1>
+                        <nav class="d-flex align-items-center">
+                            <h:link outcome="index">Home<span class="lnr lnr-arrow-right"></span></h:link>
+                            <a href="category.html">Contact</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Banner Area -->
+
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap_bottom">
+            <div class="container">
+                <div id="mapBox" class="mapBox" data-lat="10.0291" data-lon="105.7707" data-zoom="13" data-info="Khu 3, Đại học Cần Thơ"
+                     data-mlat="10.0291" data-mlon="105.7707">
+                </div>
+                <div class="row">
+                    <c:if test="#{contactsMB.mess.isMsg}">
+                                    <div class="col-md-6">
+                                        <c:if test="#{contactsMB.mess.code == '1'}">
+                                            <div class="alert alert-success" role="alert">
+                                                #{contactsMB.mess.msg}
+                                            </div>
+                                        </c:if>
+                                        <c:if test="#{contactsMB.mess.code == '2'}">
+                                            <div class="alert alert-warning" role="alert">
+                                                #{contactsMB.mess.msg}
+                                            </div>
+                                        </c:if>
+                                        <c:if test="#{brandsMB.mess.code == '3'}">
+                                            <div class="alert alert-danger" role="alert">
+                                                #{contactsMB.mess.msg}
+                                            </div>
+                                        </c:if>
+                                    </div>
+                                </c:if>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>VIET NAM , CAN THO</h6>
+                                <p>No 1, Ly Tu Trong</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6>07879984000</h6>
+                                <p>Mon to Fri 9am to 6 pm</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6>khoapham280@gmail.com</h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <h:form   enctype="multipart/form-data" styleClass="row contact_form"> 
+                            <!--<form class="row contact_form"  method="post" id="contactForm" novalidate="novalidate">-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h:inputText  value="#{contactsMB.contact.name}" styleClass="form-control" a:placeholder="Please Enter Your Name" />
+                                </div>
+                                <div class="form-group">
+                                    <h:inputText a:type="email"  value="#{contactsMB.contact.email}" styleClass="form-control" a:placeholder="Please Enter Email Address" />
+                                </div>
+                                <div class="form-group">
+                                    <h:inputText   value="#{contactsMB.contact.subject}" styleClass="form-control" a:placeholder="Please Enter Subject" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h:inputTextarea styleClass="form-control" value="#{contactsMB.contact.message}"  a:row="1" a:placeholder="Please Enter Message"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <h:commandButton value="Send Message" a:type="submit" action="#{contactsMB.SendContact()}"  styleClass="primary-btn" />
+                            </div>
+                            <!--</form>-->
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+
+        <!-- start footer Area -->
+        <ui:include src="Layout/footer.xhtml">
+            <ui:param name="active" value="contact"/>
+        </ui:include>
+        <!-- End footer Area -->
+
+        <!--================Contact Success and Error message Area =================-->
+        <div id="success" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Thank you</h2>
+                        <p>Your message is successfully sent...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals error -->
+
+        <div id="error" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Sorry !</h2>
+                        <p> Something went wrong </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================End Contact Success and Error message Area =================-->
+
+
+        <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.assets/js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.sticky.js"></script>
+        <script src="assets/js/nouislider.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>

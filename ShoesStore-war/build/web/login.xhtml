@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js"  xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:a="http://xmlns.jcp.org/jsf/passthrough"  xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Favicon-->
+        <!--<link rel="shortcut icon" href="assets/img/fav.png"/>-->
+        <!-- Author Meta -->
+        <meta name="author" content="CodePixar"/>
+        <!-- Meta Description -->
+        <meta name="description" content=""/>
+        <!-- Meta Keyword -->
+        <meta name="keywords" content=""/>
+        <!-- meta character set -->
+        <meta charset="UTF-8"/>
+        <!-- Site Title -->
+        <title>Wiska Store | Login</title>
+
+        <!--
+                CSS
+                ============================================= -->
+        <link rel="stylesheet" href="assets/css/linearicons.css"/>
+        <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+        <link rel="stylesheet" href="assets/css/themify-icons.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/nice-select.css"/>
+        <link rel="stylesheet" href="assets/css/nouislider.min.css"/>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
+    </h:head>
+
+    <body>
+
+        <!-- Start Header Area -->
+        <ui:include src="Layout/header.xhtml">
+            <ui:param name="active" value="login"/>
+        </ui:include>
+        <!-- End Header Area -->
+
+        <!-- Start Banner Area -->
+        <section class="banner-area organic-breadcrumb">
+            <div class="container">
+                <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                    <div class="col-first">
+                        <h1>Login</h1>
+                        <nav class="d-flex align-items-center">
+                            <h:link outcome="index">Home<span class="lnr lnr-arrow-right"></span></h:link>
+                            <a href="#">Login</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Banner Area -->
+
+        <!--================Login Box Area =================-->
+        <section class="login_box_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="login_box_img">
+                            <img class="img-fluid" src="assets/img/login.jpg" alt=""/>
+                            <div class="hover">
+                                <h4>New to our website?</h4>
+                                <h:link outcome="register" value="Create an Account" styleClass="primary-btn"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="login_form_inner">
+                            <h3>Login</h3>
+                            <c:if test="#{usersMB.mess.isMsg}">
+                                <div class="">
+                                    <c:if test="#{usersMB.mess.code == '1'}">
+                                        <div class="alert alert-success" role="alert">
+                                            #{usersMB.mess.msg}
+                                        </div>
+                                    </c:if>
+                                    <c:if test="#{usersMB.mess.code == '2'}">
+                                        <div class="alert alert-warning" role="alert">
+                                            #{usersMB.mess.msg}
+                                        </div>
+                                    </c:if>
+                                    <c:if test="#{usersMB.mess.code == '3'}">
+                                        <div class="alert alert-danger" role="alert">
+                                            #{usersMB.mess.msg}
+                                        </div>
+                                    </c:if>
+                                </div>
+                            </c:if>
+                            <h:form   enctype="multipart/form-data" styleClass="row login_form">
+
+                                <div class="col-md-12 form-group">
+                                    <h:inputText  value="#{usersMB.username}"  styleClass="form-control" a:placeholder="Please Enter Username" />
+
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <h:inputText  value="#{usersMB.password}" a:type="password"  styleClass="form-control" a:placeholder="Please Enter Password" />
+                                </div>
+                                <div class="col-md-12 form-group">
+
+                                    <h:panelGroup>
+                                        <h:commandButton action="#{usersMB.Login()}" value="Login" type="submit" styleClass="primary-btn"/>
+                                    </h:panelGroup>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Login Box Area =================-->
+
+        <!-- start footer Area -->
+        <ui:include src="Layout/footer.xhtml"/>
+        <!-- End footer Area -->
+
+
+        <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.assets/js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.sticky.js"></script>
+        <script src="assets/js/nouislider.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>web/index.xhtml</url>
+            <bookmark id="1">
+                <name/>
+                <line>378</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Layout/header.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/BrandsMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/edit-brand.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/OrderDetailMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/order-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/assets/css/bootstrap.css</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/blog.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/BlogMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/category-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/AuthLayout/sidebar.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/AuthLayout/header.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/confirmPasswordDelete.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/login.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/create-category.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/order-detail.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/user-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/AuthLayout/footer.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/contact.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/edit-category.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/brand-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/edit-product.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/SearchMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/dashboard.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/OdersMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/register.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Layout/footer.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/create-brand.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/create-product.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/ContactsMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/create-user.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/message/Message.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/UsersMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/shop.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/index.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/CartMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/assets/css/paper-dashboard.css</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/blog-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/product-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/assets/css/main.css</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/confirmation.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/contact-list.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/edit-blog.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/checkout.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/ProductsMB.java</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/productDetail.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/blogDetail.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/cart.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/web/Admin/create-blog.xhtml</file>
+            <file>file:/F:/ShoesStore/ShoesStore-war/src/java/com/shoes/mb/CategoriesMB.java</file>
+        </group>
+    </open-files>
+</project-private>
